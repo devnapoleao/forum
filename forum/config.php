@@ -2,7 +2,7 @@
 $hostname = "localhost"; // Nome do servidor MySQL (geralmente "localhost")
 $username = "root"; // Nome de usuário do banco de dados
 $password = ""; // Senha do banco de dados
-$database = "forum_database"; // Nome do banco de dados
+$database = "bd_forum"; // Nome do banco de dados
 
 $connection = mysqli_connect($hostname, $username, $password, $database);
 

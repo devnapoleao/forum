@@ -44,3 +44,7 @@ CREATE TABLE Votos (
     FOREIGN KEY (PublicacaoID) REFERENCES Publicacoes(ID),
     FOREIGN KEY (ComentarioID) REFERENCES Comentarios(ID)
 );
+
+
+Já foram feitos os códigos iniciais, agora preciso enviar os votos corretamente (voto único para uma publicação ou comentário)
+Após o clique na publicação vá para as respostas para ver os comentários.
