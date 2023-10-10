@@ -7,8 +7,14 @@ if (isset($_POST['criar_publicacao'])) {
     $titulo = mysqli_real_escape_string($connection, $_POST['titulo']);
     $conteudo = mysqli_real_escape_string($connection, $_POST['conteudo']);
 
-    // Pode ser necessário obter o ID do autor com base no usuário atualmente logado
-    $autorID = 1; // Substitua pelo ID do autor atual, por exemplo, após o login
+    // Obtém o ID do autor a partir do cookie, se estiver definido
+    if (isset($_COOKIE['usuarioID'])) {
+        $autorID = $_COOKIE['usuarioID'];
+    } else {
+        // Lidar com o caso em que o ID do autor não está disponível
+        echo "ID do autor não encontrado. Faça login para criar uma publicação.";
+        exit();
+    }
 
     // Insere a nova publicação no banco de dados
     $inserirQuery = "INSERT INTO Publicacoes (Titulo, Conteudo, AutorID) VALUES ('$titulo', '$conteudo', $autorID)";
